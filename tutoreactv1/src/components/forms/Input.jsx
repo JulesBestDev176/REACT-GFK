@@ -1,17 +1,15 @@
-import { useState } from "react"
 
-function Input() {
-
-    const [recherche, setRecherche] = useState('')
-
-    const handleChange = (e) => {
-        setRecherche(e.target.value)
-    }
-
+function Input({ placeholder, onChange, search }) {
     return (
-        <>
-            <input onChange={handleChange} className='form-control' type="text" name="recherche" value={recherche} placeholder="Rechercher" />
-        </>
+        <div>
+            <input
+                type="text"
+                className="form-control mb-2"
+                placeholder={placeholder}
+                value={search}
+                onChange={(e) => onChange(e.target.value)}
+            />
+        </div>
     )
 }
 
